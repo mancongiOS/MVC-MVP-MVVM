@@ -1,0 +1,44 @@
+
+
+
+
+
+                    Controller
+                    
+
+
+Model                                       View
+
+
+Model层: 负责业务逻辑、来自UI数据处理、本地数据、网络接收数据
+View层: 负责实现屏幕展示的UI、响应用户事件
+Controller层: 负责View与Model间的消息的转发传递
+
+
+目的： 低耦合，可复用。
+
+
+不正确的点：
+1. 不要把视图写到控制器里。
+- 控制器正向传值给视图，视图通过代理方向传值给控制器。
+2. 不要把网络请求写到控制器里面。
+
+
+
+MVC的优点
+1. 架构分明，
+   View就处理事件和UI，
+   Model就处理数据。Controller代码量大大减少，
+   负责View的代理事件接可以了。
+2. 更好复用。
+3. 便于维护，干净整洁。
+
+
+MVC的缺点
+1. ViewController 最终就变成了所有东西的代理和数据源，
+2. 甚至还负责网络请求的发起和取消
+3. 不方便做单元测试
+
+
+更多深入说明 可参考
+https://blog.coding.net/blog/ios-architecture-patterns
